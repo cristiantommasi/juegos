@@ -6,7 +6,7 @@ console.log(`:::::: Selecciona el juego que deseas ::::::
         3. Ta Te Ti.
         4. Adivina el numero.`);
 }
-
+//las funciones estan asi a modo de ejemplo o maqueta de menu.
 const findNumber = a =>{
     console.log("Encontra el numero.");
 }
@@ -31,6 +31,7 @@ let seguir = true;
 menu()
 let election = prompt('Elige el juego al cual deseas ingresar.')
 
+//este bloque se podria mejorar.
 switch (election) {
     case "1":
         ahorcado()
