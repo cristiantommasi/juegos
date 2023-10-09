@@ -30,3 +30,4 @@ if ((eleccionUsuario=Opciones[0])||(eleccionUsuario = Opciones[1])||(eleccionUsu
 } else {
     console.log ("eleccion invalida. Por favor, elegir piedra, papel o tijera");
 }
+//revisar interaccion con el  usuario
