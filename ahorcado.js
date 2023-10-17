@@ -28,7 +28,7 @@ const discoverCharacter = (word,secret,character)=>{
 
 const numberRamdom= a => Math.floor(Math.random()*a.length)
 
-const ahorcado= ()=>{
+ export const ahorcado= ()=>{
     let palabra=createWord(PAISES);
     let secreto=secretWord(palabra);
     let fallos = 0;

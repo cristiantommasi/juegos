@@ -1,3 +1,5 @@
+import {ahorcado} from "./ahorcado.js"
+
 const menu = () =>{
 console.log(`:::::: Selecciona el juego que deseas ::::::
 
@@ -5,23 +7,6 @@ console.log(`:::::: Selecciona el juego que deseas ::::::
         2. Piedra, Papel o Tijeras.
         3. Ta Te Ti.
         4. Adivina el numero.`);
-}
-//las funciones estan asi a modo de ejemplo o maqueta de menu.
-//las funciones estan modificadas, falta ultimo retoque.
-const findNumber = () =>{
-    //falta incorporar juego
-}
-
-const ahorcado = () =>{
-    ahorcado();
-}
-
-const taTeTi = () =>{
-    taTeTi();
-}
-
-const stonePaperSissors = a =>{
-    piedraPapelTijeras();
 }
 
 let jugar = true;
@@ -42,7 +27,7 @@ switch (election) {
         stonePaperSissors()
         break;
     case "3":
-        taTeTi()
+        tateti()
         break;
     case "4":
         findNumber()
