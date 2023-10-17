@@ -31,7 +31,7 @@ let seguir = true;
 menu()
 let election = prompt('Elige el juego al cual deseas ingresar.')
 
-//este bloque se podria mejorar.
+//este bloque se podria mejorar. habria que optimizarlo. no me parece buena idea el (switch-case).
 switch (election) {
     case "1":
         ahorcado()

@@ -56,7 +56,7 @@ const ahorcado= ()=>{
         console.log(`felicitaciones!!!. ganaste!!!. La palabra secreta era "${secreto}"`);
     }
     if (fallos===MAX_FALLOS) {
-        console.log("lo siento. se te han acabado los intentos.");
+        console.log(`lo siento. se te han acabado los intentos. La palabra secreta era ${secreto}`);
     }
 }
 
