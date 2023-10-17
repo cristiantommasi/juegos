@@ -7,22 +7,22 @@ console.log(`:::::: Selecciona el juego que deseas ::::::
         4. Adivina el numero.`);
 }
 //las funciones estan asi a modo de ejemplo o maqueta de menu.
-const findNumber = a =>{
-    console.log("Encontra el numero.");
+//las funciones estan modificadas, falta ultimo retoque.
+const findNumber = () =>{
+    //falta incorporar juego
 }
 
-const ahorcado = a =>{
-    console.log("Bienvenido al juego del Ahorcado.");
+const ahorcado = () =>{
+    ahorcado();
 }
 
-const taTeTi = a =>{
-    console.log("Este es el Juego del TA-TE-TI.");
+const taTeTi = () =>{
+    taTeTi();
 }
 
 const stonePaperSissors = a =>{
-    console.log("Juega a piedra, Papel y Tijeras.");
+    piedraPapelTijeras();
 }
-
 
 let jugar = true;
 while (jugar){
@@ -31,6 +31,8 @@ let seguir = true;
 menu()
 let election = prompt('Elige el juego al cual deseas ingresar.')
 
+
+//este bloque se podria mejorar. se podria cambiar por un ternario anidado.
 //este bloque se podria mejorar. habria que optimizarlo. no me parece buena idea el (switch-case).
 switch (election) {
     case "1":
