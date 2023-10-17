@@ -1,5 +1,5 @@
 let jugadas=["","","","","","","","",""];
-let jugadas1=["x","o","x","o","x","o","x","o",""];
+let jugadas1=["x","o","x","o","x","o","x","o","x"];
 let jugador1= "";
 let jugador2= "";
 let turno="";
@@ -73,7 +73,7 @@ const tableroLleno = ()=>{
     }
 } 
 
-const casillaLibre = ()=>(jugadas[movimiento] === "")?true:false
+const casillaLibre = pos=>(jugadas[pos] === "")?true:false
 
 const movimientoJugador = ()=>{
     let posiciones = ["1","2","3","4","5","6","7","8","9"];
@@ -82,57 +82,57 @@ const movimientoJugador = ()=>{
         if(!posiciones.includes(posicion)){
             posicion= prompt("Elige una casilla del tablero que no este ocupada (1-9): ")
         }else{
-            if(!casillaLibre()){
-                console.log("lL casilla elegida esta ocupada.");
+            if(!casillaLibre(posicion-1)){
+                console.log("La casilla elegida esta ocupada.");
             }else{
                 return parseInt(posicion-1)
             }
         }
     }
 }
+console.log(movimientoJugador());
+console.log(typeof(movimientoJugador()));
 
 const taTeTi = ()=>{
     inicio()
     eligeFicha()
     mostrarFichas()
     mostrarTablero()
-    if(jugador1==="X"){
-        turno==jugador1
-    }else[
-        turno==jugador2
-    ]
+    if(jugador1==="x"){
+        turno=jugador1;
+        console.log(turno);
+    }else{
+        turno=jugador2;
+        console.log(turno);
+    }
     let partida=true;
     while(partida){
         if(tableroLleno()){
             console.log("La partida ha terminado en un empate.");
             partida=false
-
         }else if(turno==jugador1.toUpperCase()){
-            console.log(`Es el turno de la ficha: "${jugador1}"`);
+            alert(`Es el turno de la ficha: "${jugador1}"`);
             let casilla=movimientoJugador();
-            jugadas[casilla]==jugador1;
-            turno==jugador2;
+            jugadas[casilla]=jugador1;
+            turno=jugador2;
             mostrarTablero();
             if(hayGanador()){
-                console.log(`Felicitaciones. El jugador que eligio las fichas "${jugador1}" haganado.`);
+                console.log(`Felicitaciones. El jugador que eligio las fichas "${jugador1}" ha ganado.`);
                 partida=false;
             }
         }else if(turno==jugador2.toUpperCase()){
-            console.log(`Es el turno de la ficha: "${jugador2}"`);
-            casilla==movimientoJugador();
-            jugadas[casilla]==jugador1;
-            turno==jugador2;
+            alert(`Es el turno de la ficha: "${jugador2}"`);
+            let casilla=movimientoJugador();
+            jugadas[casilla]=jugador1;
+            turno=jugador2;
             mostrarTablero();
             if(hayGanador()){
                 console.log(`Felicitaciones. El jugador que eligio las fichas "${jugador2}" haganado.`);
                 partida=false;
             }
         }
-    }
-}
+    }        
+}     
             
 
-taTeTi()
-
-
-
+//taTeTi();
