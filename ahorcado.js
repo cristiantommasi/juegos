@@ -1,4 +1,4 @@
-const PAISES= ["ARGENTINA", "BRASIL","CHILE","PARAGUAY","URUGUAY","ECUADOR","COLOMBIA","VENEZUELA","BOLIVIA","CANADA","MEXICO","NICARAGUA","CUBA"];
+const PAISES= ["ARGENTINA", "BRASIL","CHILE","PARAGUAY","URUGUAY","ECUADOR","COLOMBIA","VENEZUELA","BOLIVIA","CANADA","MEXICO","NICARAGUA","CUBA","ESTADOS UNIDOS"];
 const MAX_FALLOS= 5;
 
 const createWord= a =>{
@@ -56,7 +56,7 @@ const ahorcado= ()=>{
         console.log(`felicitaciones!!!. ganaste!!!. La palabra secreta era "${secreto}"`);
     }
     if (fallos===MAX_FALLOS) {
-        console.log("lo siento. se te han acabado los intentos.");
+        console.log(`lo siento. se te han acabado los intentos. La palabra secreta era ${secreto}`);
     }
 }
 
