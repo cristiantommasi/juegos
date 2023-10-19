@@ -28,7 +28,7 @@ const discoverCharacter = (word,secret,character)=>{
 
 const numberRamdom= a => Math.floor(Math.random()*a.length)
 
-const ahorcado= ()=>{
+ export const ahorcado= ()=>{
     let palabra=createWord(PAISES);
     let secreto=secretWord(palabra);
     let fallos = 0;
@@ -56,8 +56,6 @@ const ahorcado= ()=>{
         console.log(`felicitaciones!!!. ganaste!!!. La palabra secreta era "${secreto}"`);
     }
     if (fallos===MAX_FALLOS) {
-        console.log(`lo siento. se te han acabado los intentos. La palabra secreta era ${secreto}`);
+        console.log(`lo siento. se te han acabado los intentos. La palabra secreta era ${palabra}`);
     }
 }
-
-ahorcado();
