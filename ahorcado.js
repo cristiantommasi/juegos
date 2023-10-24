@@ -10,7 +10,10 @@ const welcome= ()=>console.log(`
 ..::BIENVENIDO A "EL JUEGO DEL AHORCADO"::..
 tu musion sera descubrir la palabra secreta,
       la cual es uno de los paises del
-         contiente americano.
+           contiente americano.
+    recuerda que la palabra secreta puede 
+            contener espacios.
+               MUCHA SUERTE.
  `);
 
 const secretWord = a => "_".repeat(parseInt(a.length))
@@ -38,7 +41,10 @@ const numberRamdom= a => Math.floor(Math.random()*a.length)
     alert("Enter para continuar...")
     
     while (fallos<MAX_FALLOS && palabra !== secreto) {
-        console.log(`esta es la palabra secreta: ${secreto}`);
+        console.log(`
+        esta es la palabra secreta: ${secreto}
+        y contiene ${palabra.length} caracteres.`);
+        
         let letra= prompt("ingresa una letra...").toUpperCase()
         if(letrasIntentadas.includes(letra)){
         console.log(`la letra "${letra}" ya ha sido ingresada.`);
