@@ -50,7 +50,7 @@ export const adivinaClave = ()=>{
     alert("Enter para continuar...")
     console.clear()
     let secreta=crearClave();
-    console.log(secreta);
+    //console.log(secreta);
     let humano="";
     while(humano!=secreta){
         humano=prompt("Trata de descubrir la clave de 5 numeros. Recuerda que los 5 numeros son diferentes entre si.")
