@@ -45,7 +45,6 @@ const main = ()=>{
             continue;
         case "5":
             termina=false;
-            //seguir=false;
             jugar=false;
             continue;
         default:
