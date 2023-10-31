@@ -1,32 +1,40 @@
-let eleccionUsuario= prompt("elije: piedra, Papel o tijera");
-let Opciones= ["piedra", "papel", "tijera"];
+let opciones= ["piedra", "papel", "tijeras"];
 
-function jugar(eleccionUsuario) {
-    // definir las opciones disponibles mediante un arreglo
-    let Opciones= ["piedra", "papel", "tijera"];
-    //genera la eleccion aleatoria de la PC
-    let eleccionPC=Opciones[round(Math()*2)];
-    // Se verifica el resultado del juego con condicional
-    if (eleccionUsuario=eleccionPC) {
-        console.log ("Empate Ambos eligieron" + eleccionUsuario);
+const eleccionHumano = ()=> prompt();
 
-    } else if ((eleccionUsuario=Opciones[0]) && (eleccionPC=Opciones=[2])||
-               (eleccionUsuario=Opciones[1]) && (eleccionPC=Opciones[0])||
-               (eleccionUsuario=Opciones[2]) && (eleccionPC=Opciones[1])
-    ) {
-            // usuario gana
-            console.log ("Ganaste. Elegiste:" + eleccionUsuario + "y la PC eligio:" + eleccionPC);
-    } else { 
-           // usuario pierde
-           console.log ("Perdiste. Elegiste" + eleccionUsuario + "y la PC eligio" + eleccionPC + ",");
-        } 
-   
+function juegaPc(){
+    let eleccionPC=opciones[Math.floor(Math.random()*3)];
+    return eleccionPC
+}
+
+const verificaGanador = (jugador, pc)=>{
+    if(jugador==pc){
+        return console.log("Empate Ambos eligieron " + jugador);
+    }else if((jugador==opciones[0]) && (pc==opciones[2])||
+               (jugador==opciones[1]) && (pc==opciones[0])||
+               (jugador==opciones[2]) && (pc==opciones[1])){
+      return console.log("Ganaste. Elegiste: " + jugador + " y la PC eligio: " + pc);
+    }else{
+        return console.log("Perdiste. Elegiste: " + jugador + " y la PC eligio: " + pc + ",");
     }
+}
 
-//interaccion con el usuario
-if ((eleccionUsuario=Opciones[0])||(eleccionUsuario = Opciones[1])||(eleccionUsuario=Opciones[2])) {
-    jugar(eleccionUsuario);
-    
-} else {
-    console.log ("eleccion invalida. Por favor, elegir piedra, papel o tijera");
+const verificaEleccionUsuario = eleccion =>{
+    if (opciones.includes(eleccion)){
+        return true
+    } else {
+        return false
+    }   
+}
+
+export const piedraPapelTijeras = ()=>{
+    let jugador = null;
+    while(verificaEleccionUsuario(jugador)==false){
+        console.log("Por favor, elige entre: piedra, papel o tijeras");
+        jugador = eleccionHumano("Ingresa tu eleccion:");
+    }    
+    let pc=juegaPc();
+    verificaGanador(jugador,pc);
+    alert("Enter para continuar...")
+    console.clear()
 }

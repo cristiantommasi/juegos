@@ -1,4 +1,9 @@
-const PAISES= ["ARGENTINA", "BRASIL","CHILE","PARAGUAY","URUGUAY","ECUADOR","COLOMBIA","VENEZUELA","BOLIVIA","CANADA","MEXICO","NICARAGUA","CUBA","ESTADOS UNIDOS"];
+const PAISES= ["ARGENTINA", "BRASIL","CHILE","PARAGUAY","URUGUAY","ECUADOR","COLOMBIA","VENEZUELA","BOLIVIA",
+"CANADA","MEXICO","NICARAGUA","CUBA","ESTADOS UNIDOS","PANAMA","PERU","HAITI","REPUBLICA DOMINICANA","EL SALVADOR","JAMAICA",
+"ALEMANIA","FRANCIA","ESPAÑA","INGLATERRA","ETIOPIA","NIGERIA","CHINA","NUEVA ZELANDA","ISLANDIA","RUSIA","JAPON","IRLANDA",
+"UCRANIA","SINGAPUR","POLONIA","ITALIA","AZERBAIYAN","YUGOSLAVIA","CHAD","TONGA","SUDAFRICA","HOLANDA","BELICE","GUYANA",
+"LIBIA","IRAN","IRAK","ARABIA SAUDITA","EGIPTO","SUDAN","NIGER","MADAGASCAR","AUSTRALIA","GHANA","PORTUGAL"];
+
 const MAX_FALLOS= 5;
 
 const createWord= a =>{
@@ -8,12 +13,8 @@ const createWord= a =>{
 
 const welcome= ()=>console.log(`
 ..::BIENVENIDO A "EL JUEGO DEL AHORCADO"::..
-tu musion sera descubrir la palabra secreta,
-      la cual es uno de los paises del
-           contiente americano.
-    recuerda que la palabra secreta puede 
-            contener espacios.
-               MUCHA SUERTE.
+tu mision sera descubrir la palabra secreta,
+   la cual es uno de los paises del MUNDO.
  `);
 
 const secretWord = a => "_".repeat(parseInt(a.length))
@@ -29,7 +30,7 @@ const discoverCharacter = (word,secret,character)=>{
     return secret.join("")
 }
 
-const numberRamdom= a => Math.floor(Math.random()*a.length)
+export const numberRamdom= a => Math.floor(Math.random()*a.length)
 
  export const ahorcado= ()=>{
     let palabra=createWord(PAISES);
@@ -39,12 +40,11 @@ const numberRamdom= a => Math.floor(Math.random()*a.length)
 
     welcome();
     alert("Enter para continuar...")
+    console.clear()
     
     while (fallos<MAX_FALLOS && palabra !== secreto) {
-        console.log(`
-        esta es la palabra secreta: ${secreto}
-        y contiene ${palabra.length} caracteres.`);
-        
+        console.log(`esta es la palabra secreta: ${secreto}`);
+        console.log(`La palabra contiene ${secreto.length} letras.`);
         let letra= prompt("ingresa una letra...").toUpperCase()
         if(letrasIntentadas.includes(letra)){
         console.log(`la letra "${letra}" ya ha sido ingresada.`);
@@ -64,4 +64,6 @@ const numberRamdom= a => Math.floor(Math.random()*a.length)
     if (fallos===MAX_FALLOS) {
         console.log(`lo siento. se te han acabado los intentos. La palabra secreta era ${palabra}`);
     }
+    alert("Enter para continuar...")
+    console.clear()
 }
