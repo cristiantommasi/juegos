@@ -1,6 +1,6 @@
 import {ahorcado} from "./ahorcado.js"
 import {tateti} from "./tateti.js"
-import {piedraPapelTijeras} from "./piedrapapeltijeras.js"
+import {piedraPapelTijeras} from "./PIEDRA_PAPEL_TIJERA.js"
 import {adivinaClave} from "./adivinaClave.js";
 
 const menu = () =>{
