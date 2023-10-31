@@ -1,3 +1,4 @@
+
 let jugadas=[" "," "," "," "," "," "," "," "," "];
 let jugador1= "";
 let jugador2= "";
@@ -83,12 +84,13 @@ const tableroLleno = ()=>{
 
 const casillaLibre = pos=>(jugadas[pos] === " ")?true:false;
 
-const movimientoJugador = ()=>{
+const movimientoJugador = (turno)=>{
     let posiciones = ["1","2","3","4","5","6","7","8","9"];
     let posicion= undefined;
     while(true){
         if(!posiciones.includes(posicion)){
-            posicion= prompt("Elige una casilla del tablero que no este ocupada (1-9): ")
+            posicion= prompt(`Turno del jugador "${turno}".
+Elige una casilla del tablero que no este ocupada (1-9): `)
         }else{
             if(casillaLibre(posicion-1)){
                 return posicion-1
@@ -107,10 +109,8 @@ export const tateti = ()=>{
     alert("¿estas listo listo para comenzar?")
     if(jugador1==="X"){
         turno=jugador1;
-        //console.log(turno);
     }else{
         turno=jugador2;
-        //console.log(turno);
     }
     let partida=true;
     while(partida){
@@ -122,9 +122,8 @@ export const tateti = ()=>{
         }else if(turno==jugador1){
             console.clear()
             mostrarTablero()
-            alert(`Es el turno de la ficha: "${jugador1}"`);
             while(true){
-                let casilla=movimientoJugador();
+                let casilla=movimientoJugador(turno);
                 if(!casilla && typeof(casilla)=="boolean"){
                     console.log("la casilla esta ocupada");
                 }else{
@@ -133,6 +132,7 @@ export const tateti = ()=>{
                 }
             }
             turno=jugador2;
+            console.clear()
             console.log(mostrarTablero());
             if(hayGanador(jugador1,jugadas)){
                 console.log(`Felicitaciones. El jugador que eligio la ficha "${jugador1}" ha ganado.`);
@@ -141,22 +141,24 @@ export const tateti = ()=>{
         }else{
             console.clear()
             mostrarTablero()
-            alert(`Es el turno de la ficha: "${jugador2}"`);
             while(true){
-                let casilla=movimientoJugador();
+                let casilla=movimientoJugador(turno);
                 if(!casilla && typeof(casilla)=="boolean"){
                     console.log("la casilla esta ocupada");
                 }else{
                     jugadas[casilla]=jugador2;
-                        break;
+                    break;
                     }
                 }
                 turno=jugador1;
+                console.clear()
                 console.log(mostrarTablero());
                 if(hayGanador(jugador2,jugadas)){
                     console.log(`Felicitaciones. El jugador que eligio la ficha "${jugador2}" ha ganado.`);
                     partida=false;
                 }
         }
-    }        
+    }  
+    alert("Enter para continuar...")      
+    console.clear()
 } 
