@@ -39,7 +39,8 @@ const comprobarClave= (humano,secreta)=>{
         }
     }
     return console.log(`
-    tienes "${posicion}" posiciones correctas y de los numeros restantes,
+    tienes "${posicion}" posiciones correctas 
+    y de los numeros restantes,
     tienes "${acierto}" numeros correctos pero en posiciones incorrectas.`)
 }
 
@@ -64,6 +65,6 @@ export const adivinaClave = ()=>{
         }
     }
     console.log(`felicitaciones haz ganado. la clave era ${secreta} 
-y la cantidad de intentos que precisaste para descubrila fueron ${intento}`);
+y la cantidad de intentos que precisaste para descubrirla fueron ${intento}`);
 alert("Enter para continuar...")
 }
